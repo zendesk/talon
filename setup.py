@@ -19,18 +19,18 @@ setup(name='talon',
       include_package_data=True,
       zip_safe=True,
       install_requires=[
-          "lxml==2.3.3",
-          "regex==0.1.20110315",
           "chardet==1.0.1",
-          "dnspython==1.11.1",
-          "html2text",
-          "nose==1.2.1",
-          "mock",
           "coverage",
-          "flanker"
+          "dnspython==1.11.1",
+          "flanker",
+          "html2text",
+          "lxml==2.3.3",
+          "mock",
+          "nose==1.2.1",
+          "numpy"
+          "regex==0.1.20110315",
           ]
       )
-
 
 def install_pyml():
     '''
@@ -43,8 +43,6 @@ def install_pyml():
     else:
         return
 
-    # install numpy first
-    pip('install numpy --upgrade')
     pip('install -Iv http://sourceforge.net/projects/pyml/files/PyML-0.7.13.3.tar.gz/download')
 
 def run(command):

@@ -27,7 +27,7 @@ setup(name='talon',
           "lxml==2.3.3",
           "mock",
           "nose==1.2.1",
-          "numpy"
+          "numpy",
           "regex==0.1.20110315",
           ]
       )

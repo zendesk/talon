@@ -20,7 +20,7 @@ from talon import html_quotations
 log = logging.getLogger(__name__)
 
 
-RE_FWD = re.compile("^[-]+[ ]*Forwarded message[ ]*[-]+$", re.I | re.M)
+RE_FWD = re.compile("^\s*[-]+[ ]*Forwarded message[ ]*[-]+\s*$", re.I | re.M)
 
 RE_ON_DATE_SMB_WROTE = re.compile(
     u'(-*[ ]?({0})[ ].*({1})(.*\n){{0,2}}.*({2}):)'.format(
@@ -100,9 +100,9 @@ RE_ORIGINAL_MESSAGE = re.compile(u'[\s]*[-]+[ ]*({})[ ]*[-]+'.format(
 RE_FROM_COLON_OR_DATE_COLON = re.compile(u'(_+\r?\n)?[\s]*(:?[*]?{})[\s]?:[*]? .*'.format(
     u'|'.join((
         # "From" in different languages.
-        'From', 'Van', 'De', 'Von', 'Fra',
+        'From', 'Van', 'De', 'Von', 'Fra', 'Od',
         # "Date" in different languages.
-        'Date', 'Datum', u'Envoyé'
+        'Date', 'Datum', u'Envoyé', 'Wys.ano'
     ))), re.I)
 
 SPLITTER_PATTERNS = [

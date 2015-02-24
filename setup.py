@@ -44,22 +44,8 @@ def install_pyml():
         return
 
     # install numpy first
-    pip('install numpy==1.6.1 --upgrade')
-
-    pyml_tarball = (
-        'http://09cce49df173f6f6e61f-fd6930021b51685920a6fa76529ee321'
-        '.r45.cf2.rackcdn.com/PyML-0.7.9.tar.gz')
-    pyml_srcidr = 'PyML-0.7.9'
-
-    # see if PyML tarball needs to be fetched:
-    if not dir_exists(pyml_srcidr):
-        run("curl %s | tar -xz" % pyml_tarball)
-
-    # compile&install:
-    with cd(pyml_srcidr):
-        python('setup.py build')
-        python('setup.py install')
-
+    pip('install numpy --upgrade')
+    pip('install -Iv http://sourceforge.net/projects/pyml/files/PyML-0.7.13.3.tar.gz/download')
 
 def run(command):
     if os.system(command) != 0:

@@ -19,18 +19,18 @@ setup(name='talon',
       include_package_data=True,
       zip_safe=True,
       install_requires=[
-          "lxml==2.3.3",
-          "regex==0.1.20110315",
           "chardet==1.0.1",
-          "dnspython==1.11.1",
-          "html2text",
-          "nose==1.2.1",
-          "mock",
           "coverage",
-          "flanker"
+          "dnspython==1.11.1",
+          "flanker",
+          "html2text",
+          "lxml==2.3.3",
+          "mock",
+          "nose==1.2.1",
+          "numpy"
+          "regex==0.1.20110315",
           ]
       )
-
 
 def install_pyml():
     '''
@@ -43,23 +43,7 @@ def install_pyml():
     else:
         return
 
-    # install numpy first
-    pip('install numpy==1.6.1 --upgrade')
-
-    pyml_tarball = (
-        'http://09cce49df173f6f6e61f-fd6930021b51685920a6fa76529ee321'
-        '.r45.cf2.rackcdn.com/PyML-0.7.9.tar.gz')
-    pyml_srcidr = 'PyML-0.7.9'
-
-    # see if PyML tarball needs to be fetched:
-    if not dir_exists(pyml_srcidr):
-        run("curl %s | tar -xz" % pyml_tarball)
-
-    # compile&install:
-    with cd(pyml_srcidr):
-        python('setup.py build')
-        python('setup.py install')
-
+    pip('install -Iv http://sourceforge.net/projects/pyml/files/PyML-0.7.13.3.tar.gz/download')
 
 def run(command):
     if os.system(command) != 0:

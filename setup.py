@@ -19,16 +19,16 @@ setup(name='talon',
       include_package_data=True,
       zip_safe=True,
       install_requires=[
-          "chardet==1.0.1",
+          "chardet>=1.0.1",
           "coverage",
-          "dnspython==1.11.1",
+          "dnspython>=1.11.1",
           "flanker",
           "html2text",
-          "lxml==2.3.3",
+          "lxml>=2.3.3",
           "mock",
-          "nose==1.2.1",
+          "nose>=1.2.1",
           "numpy",
-          "regex==0.1.20110315",
+          "regex>=0.1.20110315",
           ]
       )
 
